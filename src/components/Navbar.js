@@ -10,7 +10,7 @@ const NavbarContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: salmon;
+  background-color: lightGrey;
   border: none;
 `;
 const NavbarInnerContainer = styled.div`
@@ -26,7 +26,8 @@ const LeftNavbarContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-left: 5%;
-  background-color: salmon;
+  color: black;
+  background-color: lightGrey;
   border: none;
 `;
 
@@ -63,7 +64,7 @@ const NavList = styled.div`
 `;
 
 const NavbarLink = styled(Link)`
-  color: white;
+  color: black;
   font-size: 14px;
   margin: 10px;
   border: none;
@@ -74,11 +75,13 @@ const RightNavbarContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: salmon;
+  background-color: lightGrey;
   border: none;
 `;
 
 const LogoTitle = styled.span`
+  margin-right: 10px;
+  font-size: 12px;
   align-self: center;
   border: none;
 `;
@@ -127,19 +130,13 @@ function Navbar(props) {
               <NavbarLink onClick={clickMove} move={move} to="/">
                 Home
               </NavbarLink>
-              <NavbarLink to="/products" onClick={clickMove} move={move}>
-                Products
-              </NavbarLink>
-              <NavbarLink to="/about" onClick={clickMove} move={move}>
-                About
-              </NavbarLink>
               <NavbarLink to="/contact" onClick={clickMove} move={move}>
                 Contact
               </NavbarLink>
             </NavList>
           </LeftNavbarContainer>
           <RightNavbarContainer>
-            <LogoTitle>TREE</LogoTitle>
+            <LogoTitle>BLOCKCHAIN</LogoTitle>
             <LogoImage src={Logo} alt="logo" />
           </RightNavbarContainer>
         </NavbarInnerContainer>
