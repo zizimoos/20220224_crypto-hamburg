@@ -39,7 +39,6 @@ const Container = styled.div`
     width: 900px;
   }
 `;
-
 const BackLink = styled(Link)`
   align-self: flex-start;
   padding: 10px;
@@ -52,9 +51,7 @@ const Header = styled.header`
   margin-top: 0px;
   padding-bottom: 30px;
 `;
-
 const Title = styled.h1``;
-
 const rotata = keyframes`
 from{
   transform: rotate(0deg);
@@ -63,13 +60,11 @@ to{
   transform: rotate(360deg);
 }
 `;
-
 const IsLoading = styled(AiOutlineLoading3Quarters)`
   height: 100vh;
   justify-self: center;
   animation: ${rotata} 2s linear infinite;
 `;
-
 const Overview = styled.div`
   width: 100%;
   display: flex;
@@ -79,7 +74,6 @@ const Overview = styled.div`
   padding: 10px 20px;
   border-radius: 10px;
 `;
-
 const OverviewItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -91,7 +85,6 @@ const OverviewItem = styled.div`
     margin-bottom: 5px;
   }
 `;
-
 const Description = styled.p`
   margin: 10px 0px;
   padding-right: 5px;
@@ -104,7 +97,6 @@ const Description = styled.p`
     font-weight: 700;
   }
 `;
-
 const Tabs = styled.div`
   width: 100%;
   margin-top: 20px;
@@ -162,7 +154,6 @@ interface ICoinInfo {
   first_data_at: Date;
   last_data_at: Date;
 }
-
 interface ICoinPrice {
   id: string;
   name: string;
