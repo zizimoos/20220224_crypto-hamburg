@@ -54,6 +54,7 @@ table {
 	border-spacing: 0;
 }
 body {
+  background-color: ${(props) => props.theme.colors.mainBackgroundColor};
   font-family: 'Montserrat', sans-serif;
 }
 * {
@@ -63,6 +64,7 @@ a {
   text-decoration: none;
 }
 `;
+
 function App() {
   // eslint-disable-next-line
   const [isDarkMode, _] = useRecoilState(themeToggleState);

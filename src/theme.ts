@@ -2,8 +2,8 @@ import { DefaultTheme } from "styled-components";
 
 export const DarkTheme: DefaultTheme = {
   colors: {
-    mainBackgroundColor: "darkSlateGray",
-    mainTextColor: "darkgrey",
+    mainBackgroundColor: "#708090",
+    mainTextColor: "white",
     subTextColor: "white",
     secondary: "navy",
     boxLineColor: "dimGrey",

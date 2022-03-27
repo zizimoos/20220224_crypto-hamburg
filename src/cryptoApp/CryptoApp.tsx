@@ -10,7 +10,7 @@ import { themeToggleState } from "../atoms/atoms";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -27,17 +27,15 @@ const Header = styled.header`
   margin-top: 0px;
   padding: 20px;
 `;
-
 const ToggleBox = styled.div`
   width: 100%;
   height: 50px;
   margin-left: 50px;
   padding-top: 10px;
   justify-content: flex-start;
+  font-size: 30px;
 `;
-
 const Title = styled.h1``;
-
 const rotata = keyframes`
 from{
   transform: rotate(0deg);
@@ -46,19 +44,15 @@ to{
   transform: rotate(360deg);
 }
 `;
-
 const IsLoading = styled(AiOutlineLoading3Quarters)`
   height: 100vh;
   justify-self: center;
   animation: ${rotata} 2s linear infinite;
 `;
-
 const CoinList = styled.div`
   width: 100%;
 `;
-
 const LinkBox = styled(Link)``;
-
 const CoinBox = styled.div`
   width: 100%;
   padding: 10px 20px;
@@ -66,6 +60,7 @@ const CoinBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid ${(props) => props.theme.colors.boxLineColor};
+  color: ${(props) => props.theme.colors.mainTextColor};
   font-size: 14px;
   &:hover {
     color: #00c198;
@@ -79,7 +74,6 @@ const CoinBox = styled.div`
     }
   }
 `;
-
 interface ICoinList {
   id: "string";
   name: "string";
@@ -122,7 +116,10 @@ const CryptoApp = () => {
               {coinList?.map((coin, index) => {
                 return (
                   <div key={index}>
-                    <LinkBox to={`/${coin.id}`} state={{ coinName: coin.name }}>
+                    <LinkBox
+                      to={`/${coin.id}/chart`}
+                      state={{ coinName: coin.name }}
+                    >
                       <CoinBox>
                         <div>
                           <div>

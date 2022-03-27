@@ -43,6 +43,7 @@ const Container = styled.div`
 const BackLink = styled(Link)`
   align-self: flex-start;
   padding: 10px;
+  font-size: 30px;
 `;
 // const UiIcon = styled(AiOutlineLeftCircle)`
 //   font-size: 30px;
@@ -118,16 +119,17 @@ const Tab = styled.div<{ isActive: boolean }>`
   font-size: 14px;
   flex-basis: 48%;
   background-color: rgba(0, 0, 0, 0.5);
-  color: ${(props) =>
-    props.isActive
-      ? props.theme.colors.subTextColor
-      : props.theme.colors.mainTextColor};
+
   a {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: ${(props) =>
+      props.isActive
+        ? props.theme.colors.subTextColor
+        : props.theme.colors.mainTextColor};
   }
 `;
 
