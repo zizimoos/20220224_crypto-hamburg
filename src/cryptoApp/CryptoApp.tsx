@@ -7,6 +7,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { BsToggle2Off, BsToggle2On } from "react-icons/bs";
 import { useRecoilState } from "recoil";
 import { themeToggleState } from "../atoms/atoms";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -85,6 +86,7 @@ interface ICoinList {
 }
 
 const CryptoApp = () => {
+  const [pages, setPages] = useState(100);
   const [isDarkMode, setIsDarkMode] = useRecoilState(themeToggleState);
   const { isLoading, data: coinList } = useQuery<ICoinList[]>(
     "coinList",
@@ -94,6 +96,23 @@ const CryptoApp = () => {
   const onToggle = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    const onScroll = (event: any) => {
+      const scrollTop = event.target.scrollingElement.scrollTop;
+      const scrollHeight = event.target.scrollingElement.scrollHeight;
+      const clientHeight = event.target.scrollingElement.clientHeight;
+      if (scrollTop + clientHeight === scrollHeight) {
+        console.log("bottom");
+        setPages((current) => current + 100);
+      }
+    };
+    document.addEventListener("scroll", onScroll);
+    return () => {
+      document.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <Container>
@@ -113,7 +132,7 @@ const CryptoApp = () => {
             </IsLoading>
           ) : (
             <CoinList>
-              {coinList?.map((coin, index) => {
+              {coinList?.slice(0, pages).map((coin, index) => {
                 return (
                   <div key={index}>
                     <LinkBox
