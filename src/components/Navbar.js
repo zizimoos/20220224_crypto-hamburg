@@ -92,7 +92,7 @@ const LogoImage = styled.img`
   align-self: center;
   border: none;
 `;
-
+// eslint-disable-next-line
 const NavbarExtendedContainer = styled.div`
   width: 70vw;
   height: 100vh;
@@ -130,13 +130,16 @@ function Navbar(props) {
               <NavbarLink onClick={clickMove} move={move} to="/">
                 Home
               </NavbarLink>
+              <NavbarLink to="/search" onClick={clickMove} move={move}>
+                Search
+              </NavbarLink>
               <NavbarLink to="/contact" onClick={clickMove} move={move}>
                 Contact
               </NavbarLink>
             </NavList>
           </LeftNavbarContainer>
           <RightNavbarContainer>
-            <LogoTitle>BLOCKCHAIN</LogoTitle>
+            <LogoTitle>AZERC CRYPTO</LogoTitle>
             <LogoImage src={Logo} alt="logo" />
           </RightNavbarContainer>
         </NavbarInnerContainer>

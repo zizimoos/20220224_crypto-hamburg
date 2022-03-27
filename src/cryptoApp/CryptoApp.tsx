@@ -86,7 +86,7 @@ interface ICoinList {
 }
 
 const CryptoApp = () => {
-  const [pages, setPages] = useState(100);
+  const [pages, setPages] = useState(50);
   const [isDarkMode, setIsDarkMode] = useRecoilState(themeToggleState);
   const { isLoading, data: coinList } = useQuery<ICoinList[]>(
     "coinList",
@@ -103,8 +103,7 @@ const CryptoApp = () => {
       const scrollHeight = event.target.scrollingElement.scrollHeight;
       const clientHeight = event.target.scrollingElement.clientHeight;
       if (scrollTop + clientHeight === scrollHeight) {
-        console.log("bottom");
-        setPages((current) => current + 100);
+        setPages((current) => current + 50);
       }
     };
     document.addEventListener("scroll", onScroll);
@@ -143,11 +142,12 @@ const CryptoApp = () => {
                         <div>
                           <div>
                             {
-                              <img
-                                src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
-                                alt="coin"
-                                style={{ width: "20px", height: "20px" }}
-                              />
+                              coin?.rank
+                              // <img
+                              //   src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                              //   alt="coin"
+                              //   style={{ width: "20px", height: "20px" }}
+                              // />
                             }
                           </div>
                           <div>{coin.name}</div>
