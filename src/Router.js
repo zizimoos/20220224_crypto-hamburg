@@ -5,7 +5,7 @@ import About from "./Routes/About";
 import Contact from "./Routes/Contact";
 import CoinDetail from "./cryptoApp/CoinDetail";
 import CryptoApp from "./cryptoApp/CryptoApp";
-import Search from "./Routes/Search";
+import Search from "./cryptoApp/Search";
 
 function Router() {
   return (

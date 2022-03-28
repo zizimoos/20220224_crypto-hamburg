@@ -24,3 +24,14 @@ export const apiCoinHistory = (coinId: string) => {
     .then((res) => res.json())
     .then((data) => data);
 };
+
+export const apiSearchCoin = (searchTerm: string) => {
+  if (searchTerm === "") {
+    searchTerm = "btc";
+  }
+  return fetch(
+    `https://api.coinpaprika.com/v1/search/?q=${searchTerm}&limit=10`
+  )
+    .then((response) => response.json())
+    .then((data) => data);
+};

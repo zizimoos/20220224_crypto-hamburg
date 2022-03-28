@@ -88,3 +88,44 @@ export interface Usd {
   ath_date: Date;
   percent_from_price_ath: number;
 }
+
+//////////////////////////////////////////////
+
+export interface Currency {
+  id: string;
+  name: string;
+  symbol: string;
+  rank: number;
+  is_new: boolean;
+  is_active: boolean;
+  type: string;
+  rev: number;
+}
+
+export interface Exchange {
+  id: string;
+  name: string;
+  rank: number;
+  rev: number;
+}
+
+export interface Ico {
+  id: string;
+  name: string;
+  symbol: string;
+  is_new: boolean;
+  rev: number;
+}
+
+export interface Person {
+  id: string;
+  name: string;
+  teams_count: number;
+}
+
+export interface Tag {
+  id: string;
+  name: string;
+  coin_counter: number;
+  ico_counter: number;
+}
